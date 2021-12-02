@@ -50,7 +50,8 @@ environment {
         }
 }
 
-        stage('Database docker build')steps { 
+        stage('Database docker build')
+ 		steps { 
                 withCredentials([usernameColonPassword(credentialsId: '<YOUR HARBOR CREDENTIAL NAME>', variable: 'HARBOR-AUTH')]) {
                     script {
                         docker.build('$APP_IMAGE_NAME-$APP_HASH', '-f ./db/Dockerfile ./afs-labs-student')
