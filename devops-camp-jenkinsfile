@@ -32,7 +32,6 @@ environment {
                         }
                     }
                 }
-                echo "Building application image"
             }
 
        post {
@@ -45,9 +44,9 @@ environment {
                         } catch (err) {
                             echo err.getMessage()
                         }
-                    }
-                }
-        }
+		}
+	}
+}
 }
 
         stage('Database docker build') {
