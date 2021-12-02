@@ -34,6 +34,7 @@ environment {
                 }
                 echo "Building application image"
             }
+}
        post {
                 always {
                     echo "Clean local $APP_IMAGE_NAME image"
@@ -47,6 +48,7 @@ environment {
                     }
                 }
         }
+
         stage('Database docker build')steps { 
                 withCredentials([usernameColonPassword(credentialsId: '<YOUR HARBOR CREDENTIAL NAME>', variable: 'HARBOR-AUTH')]) {
                     script {
@@ -91,4 +93,4 @@ environment {
             sh 'rm -rf .git ./*'
         }
     }
-}
+
