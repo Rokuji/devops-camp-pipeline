@@ -60,7 +60,8 @@ environment {
                             sh 'docker push $HARBOR_REGISTRY/$HARBOR_PROJECT/$DB_IMAGE_NAME:$APP_HASH-$PIPELINE_HASH'
                         }
                     }
-                }             
+                }
+}             
 		echo "Building database image"
             
        post {
@@ -77,7 +78,7 @@ environment {
                 }
             }
 	}
-}
+
         
         stage('Test'){
             steps {
