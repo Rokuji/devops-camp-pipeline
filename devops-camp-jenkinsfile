@@ -50,7 +50,7 @@ environment {
         }
 }
 
-        stage('Database docker build')
+        stage('Database docker build') {
  		steps { 
                 withCredentials([usernameColonPassword(credentialsId: '<YOUR HARBOR CREDENTIAL NAME>', variable: 'HARBOR-AUTH')]) {
                     script {
@@ -77,6 +77,7 @@ environment {
                 }
             }
 	}
+}
         
         stage('Test'){
             steps {
